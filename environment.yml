@@ -1,0 +1,11 @@
+name: my_environment
+channels:
+  - defaults
+dependencies:
+  - python=3.8
+  - flask
+  - jupyter
+  - nbconvert
+  - nbformat
+  - pip:
+    - some_package_not_on_conda
