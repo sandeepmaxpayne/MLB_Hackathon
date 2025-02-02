@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Input</title>
+</head>
+<body>
+    <h1>MLB TIP</h1>
+    <form action="/submit" method="POST">
+        <input type="text" name="user_input" placeholder="enter some baseball info" width="20" height="30%" required>
+        <button type="submit">Submit</button>
+    </form>
+    <br>
+    <h1>Processed MLB Result</h1>
+    <p>{{ result }}</p>
+</body>
+</html>
