@@ -1,0 +1,5 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/$sample-firebase-b9f24/flask-app', '.']
+images:
+- 'gcr.io/$sample-firebase-b9f24/flask-app'
