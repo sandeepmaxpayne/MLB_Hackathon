@@ -2,10 +2,12 @@ name: my_environment
 channels:
   - defaults
 dependencies:
-  - python=3.8
+  - python=3.9s
   - flask
   - jupyter
   - nbconvert
   - nbformat
+  - conda=24.11
+  - conda-anaconda-telemetry
   - pip:
     - some_package_not_on_conda
