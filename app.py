@@ -10,6 +10,8 @@ load_dotenv()
 app = Flask(__name__)
 CORS(app)
 
+port = int(os.environ.get("PORT", 8080))
+
 # Get environment variables
 app.config['DEBUG'] = os.environ.get('FLASK_DEBUG')
 
@@ -25,5 +27,4 @@ def submit():
     return jsonify(result=result)
 if __name__ == '__main__':
     # app.run(debug=True)
-    port = int(os.environ.get("PORT", 8080))
     app.run(host="0.0.0.0", port=port)
