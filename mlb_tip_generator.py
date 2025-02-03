@@ -291,26 +291,38 @@ from vertexai.preview.generative_models import GenerativeModel
 def generate_tagline(User_input):    
   
   model = GenerativeModel("gemini-2.0-flash-exp")
+
+
   prompt = f""" 
-Baseball Tournament Fans Club. Help fans to create catchy taglines for their teams.
+  Baseball Tournament Fans Club. Help fans to create catchy taglines for their teams.
 
-input: {players, most_followed_players, most_common_favorite_teams, most_followed_teams}
-output: best player or teams details most followed
+  input: {players, single_player_info_json, most_followed_players, most_common_favorite_teams, most_followed_teams, seasons}
+  output: Players or Teams related details
 
-input: {games, single_player_info_json, teams, single_game_info_json, single_game_play, single_play_video_url}
-output: Scheduled games with team and player information
+  input: {schedule_dates}
+  output: Match on scheduled dates
 
-input: {User_input}
-output: {User_input}
+  input: {players, most_followed_players, most_common_favorite_teams, most_followed_teams}
+  output: Players or Teams related details
 
+  input: {games, single_player_info_json, teams, single_game_info_json, single_game_play, seasons, most_common_favorite_teams}
+  output: Baseball game information
 
-"""
+  input: {schedule_dates}
+  output: Match on scheduled dates
+    
+  input: short tip on {sports}
+  output: Team or player or baseball sport tip
+    
+  input: {User_input}
+  output: {User_input}
+  """
 
   responses = model.generate_content( 
     prompt,
     generation_config={
-        "temperature": 1.5,
-        "max_output_tokens": 2048,
+        "temperature": 1,
+        "max_output_tokens": 1024,
         "top_p": 1.0,
         "top_k": 40,
     },
