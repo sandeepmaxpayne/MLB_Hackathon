@@ -1,5 +1,5 @@
 steps:
   - name: 'gcr.io/k8s-skaffold/pack'
-    args: ['build', 'gcr.io/$PROJECT_ID/$REPO_NAME']
+    args: ['build', 'gcr.io/$sample-firebase-b9f24/$mlb-tooltip']
     env:
       - 'GOOGLE_ENTRYPOINT=python app.py'
